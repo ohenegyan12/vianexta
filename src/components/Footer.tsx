@@ -198,7 +198,7 @@ export default function Footer() {
                 <li><a href="#" className="text-gray-600 hover:text-[#06382F] transition-colors duration-200">Why Choose Us</a></li>
                 <li><a href="#" className="text-gray-600 hover:text-[#06382F] transition-colors duration-200">How It Works</a></li>
                 <li><a href="#" className="text-gray-600 hover:text-[#06382F] transition-colors duration-200">Testimonials</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-[#06382F] transition-colors duration-200">FAQ's</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-[#06382F] transition-colors duration-200">FAQ&apos;s</a></li>
                 <li>
                   <a href="#" className="text-gray-600 hover:text-[#06382F] transition-colors duration-200 flex items-center gap-2">
                     FORMAN

@@ -91,7 +91,7 @@ export default function FormanSection() {
             <div className="space-y-6">
               <p className="text-lg text-gray-200 leading-relaxed">
                 Say hello to Forman, our AI-powered agent designed to make your coffee 
-                journey effortless. <span style={{ color: '#FFD700' }}>Whether you're a first-time buyer or a loyal customer, Forman 
+                journey effortless. <span style={{ color: '#FFD700' }}>Whether you&apos;re a first-time buyer or a loyal customer, Forman 
                 helps you:</span>
               </p>
 

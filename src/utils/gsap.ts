@@ -48,6 +48,7 @@ export const animations = {
 };
 
 // Common animation functions
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const animateIn = (element: string | Element, animation: any, delay = 0) => {
   return gsap.fromTo(element, animation, {
     ...animation,
@@ -59,6 +60,7 @@ export const animateIn = (element: string | Element, animation: any, delay = 0) 
   });
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const animateOnScroll = (element: string | Element, animation: any, triggerElement?: string | Element) => {
   return gsap.fromTo(element, animation, {
     ...animation,

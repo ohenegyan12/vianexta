@@ -18,14 +18,14 @@ const testimonials: Testimonial[] = [
     name: "Elena",
     username: "@brewwithElena",
     avatar: "/hero_gif.gif",
-    content: "@ViaNexta is hands down the best coffee I've ever had. From flavour to freshness—every cup feels like a treat."
+    content: "@ViaNexta is hands down the best coffee I&apos;ve ever had. From flavour to freshness—every cup feels like a treat."
   },
   {
     id: 2,
     name: "John",
     username: "@johncjgo", 
     avatar: "/hero_gif.gif",
-    content: "By far, @ViaNexta has given me more joy than any other coffee brand. I ordered on a whim and was blown away—not just by the rich flavor, but by the story behind it. Ethically sourced, fast delivery, and beautiful packaging. It's everything I didn't know I was missing. How is this not more well known?"
+    content: "By far, @ViaNexta has given me more joy than any other coffee brand. I ordered on a whim and was blown away—not just by the rich flavor, but by the story behind it. Ethically sourced, fast delivery, and beautiful packaging. It&apos;s everything I didn&apos;t know I was missing. How is this not more well known?"
   },
   {
     id: 3,
@@ -46,7 +46,7 @@ const testimonials: Testimonial[] = [
     name: "Nina", 
     username: "@Nina12",
     avatar: "/hero_gif.gif",
-    content: "Tried @ViaNexta on a friend's recommendation. Now it's a ritual. The quality is unreal. ☕😍"
+    content: "Tried @ViaNexta on a friend&apos;s recommendation. Now it&apos;s a ritual. The quality is unreal. ☕😍"
   },
   {
     id: 6,
@@ -60,7 +60,7 @@ const testimonials: Testimonial[] = [
     name: "NeverLand",
     username: "@neverlandoff", 
     avatar: "/hero_gif.gif",
-    content: "Looking for specialty coffee? I recommend @ViaNexta. Smooth ordering, fast replies to my questions, and honestly—it's the first coffee brand that looks and feels premium from bean to bag. Haven't finished my first bag yet, but so far it's blowing my expectations out of the water."
+    content: "Looking for specialty coffee? I recommend @ViaNexta. Smooth ordering, fast replies to my questions, and honestly—it&apos;s the first coffee brand that looks and feels premium from bean to bag. Haven&apos;t finished my first bag yet, but so far it&apos;s blowing my expectations out of the water."
   },
   {
     id: 8,
@@ -75,7 +75,7 @@ const testimonials: Testimonial[] = [
     name: "Darren Pinder",
     username: "@dmpinder", 
     avatar: "/hero_gif.gif",
-    content: "I'm utterly blown away by @ViaNexta! They do everything right. I'm now in love with experiencing beans from Mexico, delivered fast, packed beautifully, and sourced ethically. The flavor is unmatched, the story is inspiring, and the whole experience feels premium from start to sip. 😍"
+    content: "I&apos;m utterly blown away by @ViaNexta! They do everything right. I&apos;m now in love with experiencing beans from Mexico, delivered fast, packed beautifully, and sourced ethically. The flavor is unmatched, the story is inspiring, and the whole experience feels premium from start to sip. 😍"
   },
   {
     id: 10,
@@ -89,7 +89,7 @@ const testimonials: Testimonial[] = [
     name: "kostya",
     username: "@teskostya", 
     avatar: "/hero_gif.gif",
-    content: "I absolutely love services like @ViaNexta Simple, tastes amazing, @ViaNexta is perfect for anyone just getting into specialty coffee I don't remember finding anything this good when I first started exploring better brews a few years ago."
+    content: "I absolutely love services like @ViaNexta Simple, tastes amazing, @ViaNexta is perfect for anyone just getting into specialty coffee I don&apos;t remember finding anything this good when I first started exploring better brews a few years ago."
   }
 ];
 

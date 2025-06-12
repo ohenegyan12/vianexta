@@ -28,7 +28,7 @@ const faqData: FAQItem[] = [
   {
     id: 4,
     question: "Need your coffee fast and on time?",
-    answer: "Yes! We offer expedited shipping options with tracking. Most orders are processed within 24 hours and shipped from our nearest warehouse. You'll receive real-time updates throughout the delivery process, and Forman can help you track your order status anytime."
+    answer: "Yes! We offer expedited shipping options with tracking. Most orders are processed within 24 hours and shipped from our nearest warehouse. You&apos;ll receive real-time updates throughout the delivery process, and Forman can help you track your order status anytime."
   },
   {
     id: 5,

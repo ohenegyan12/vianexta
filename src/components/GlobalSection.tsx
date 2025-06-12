@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
-import { gsap, animations } from '@/utils/gsap';
+import { gsap } from '@/utils/gsap';
 
 export default function GlobalSection() {
   const sectionRef = useRef<HTMLElement>(null);
