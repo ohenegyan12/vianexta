@@ -82,7 +82,7 @@ export default function GlobalSection() {
               ref={descriptionRef}
               className="text-lg md:text-xl text-gray-700 font-normal leading-relaxed max-w-4xl text-left"
             >
-              We partner with passionate roasters and buyers across North America, Europe, Asia, and beyond—delivering exceptional, traceable coffee grown in the heart of Mexico to every corner of the globe.
+             We partner with passionate roasters and buyers—delivering exceptional, traceable coffee grown in the heart of Mexico to coffee lovers everywhere.
             </p>
           </div>
 

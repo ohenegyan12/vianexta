@@ -78,10 +78,10 @@ export default function HeroSection() {
             {/* Descriptions */}
             <div ref={descriptionRef} className="space-y-6">
               <p className="description-text text-lg md:text-xl text-gray-700 font-normal leading-relaxed">
-                ViaNexta gives you instant access to roasters, warehouses, and ethical sourcing, so you can scale without friction.
+                ViaNexta gives you instant access to roasters, warehouses, and ethical sourcing, so you can grow without friction.
               </p>
               <p className="description-text text-lg md:text-xl text-gray-700 font-normal leading-relaxed">
-                Launch a premium coffee brand with ease. ViaNexta connects you with certified roasters, verified warehouses, and ethically sourced beans—so you can focus on growth while we handle the rest.
+              Start earning more from your own premium coffee brand—without the hassle. ViaNexta takes care of the boring, complicated parts like sourcing, roasting, and logistics, so you can focus on building your brand and growing your profits.
               </p>
             </div>
             {/* CTA Button */}

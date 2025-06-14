@@ -195,10 +195,10 @@ export default function WhyChooseSection() {
             
             {/* Small Description - aligned to bottom */}
             <div className="mt-auto">
-              <p className="text-sm text-gray-400 italic">
-                *Unlike generic white-label solutions, <span className="text-orange-400 font-semibold">ViaNexta</span> gives you full 
-                control while handling the roasting, packing, and fulfillment with unmatched precision.*
-              </p>
+            <p className="text-sm text-gray-400 italic">
+  *Unlike generic white-label solutions, <span className="text-orange-400 font-semibold">ViaNexta</span> gives you full 
+  control and higher margins—while we handle the roasting, packing, and fulfillment with zero hassle.*
+</p>
             </div>
           </div>
 
