@@ -17,56 +17,56 @@ const testimonials: Testimonial[] = [
     id: 1,
     name: "Elena",
     username: "@brewwithElena",
-    avatar: "/hero_gif.gif",
+    avatar: "/avatar1.png",
     content: "@ViaNexta is hands down the best coffee I&apos;ve ever had. From flavour to freshness—every cup feels like a treat."
   },
   {
     id: 2,
     name: "John",
     username: "@johncjgo", 
-    avatar: "/hero_gif.gif",
+    avatar: "/avatar2.png",
     content: "By far, @ViaNexta has given me more joy than any other coffee brand. I ordered on a whim and was blown away—not just by the rich flavor, but by the story behind it. Ethically sourced, fast delivery, and beautiful packaging. It&apos;s everything I didn&apos;t know I was missing. How is this not more well known?"
   },
   {
     id: 3,
     name: "Liam",
     username: "@liamslipe",
-    avatar: "/hero_gif.gif", 
+    avatar: "/avatar3.png", 
     content: "Just brewed my first cup of @ViaNexta. WOW. The aroma hit first, then the flavor sealed it. I'm obsessed. 😍☕"
   },
   {
     id: 4,
     name: "Tianzhou",
     username: "@tianzhouchai",
-    avatar: "/hero_gif.gif",
+    avatar: "/avatar4.png",
     content: "I love how @ViaNexta connects you to the farms. It's not just coffee—it's a story in every sip. ❤️🌾"
   },
   {
     id: 5,
     name: "Nina", 
     username: "@Nina12",
-    avatar: "/hero_gif.gif",
+    avatar: "/avatar5.png",
     content: "Tried @ViaNexta on a friend&apos;s recommendation. Now it&apos;s a ritual. The quality is unreal. ☕😍"
   },
   {
     id: 6,
     name: "Chris",
     username: "@chrisshow",
-    avatar: "/hero_gif.gif",
+    avatar: "/avatar6.png",
     content: "Never knew coffee could taste this clean. @ViaNexta is my new go-to. Roasted to perfection. ❤️🔥"
   },
   {
     id: 7,
     name: "NeverLand",
     username: "@neverlandoff", 
-    avatar: "/hero_gif.gif",
+    avatar: "/avatar7.png",
     content: "Looking for specialty coffee? I recommend @ViaNexta. Smooth ordering, fast replies to my questions, and honestly—it&apos;s the first coffee brand that looks and feels premium from bean to bag. Haven&apos;t finished my first bag yet, but so far it&apos;s blowing my expectations out of the water."
   },
   {
     id: 8,
     name: "Valentin Prugnaud",
     username: "@valentinprgnd",
-    avatar: "/hero_gif.gif",
+    avatar: "/avatar8.png",
     content: "Switched to @ViaNexta this weekend—smooth, bold, and ethically sourced. Loving it so far. ☕️🔥",
     verified: true
   },
@@ -74,21 +74,21 @@ const testimonials: Testimonial[] = [
     id: 9,
     name: "Darren Pinder",
     username: "@dmpinder", 
-    avatar: "/hero_gif.gif",
+    avatar: "/avatar9.png",
     content: "I&apos;m utterly blown away by @ViaNexta! They do everything right. I&apos;m now in love with experiencing beans from Mexico, delivered fast, packed beautifully, and sourced ethically. The flavor is unmatched, the story is inspiring, and the whole experience feels premium from start to sip. 😍"
   },
   {
     id: 10,
     name: "Markus Leimer",
     username: "@markusleih2",
-    avatar: "/hero_gif.gif",
+    avatar: "/avatar10.png",
     content: "What are you brewing these days? For me, it's all about @ViaNexta — love the clean flavor, traceable sourcing, and smooth experience. Curious what others are sipping ☕"
   },
   {
     id: 11,
     name: "kostya",
     username: "@teskostya", 
-    avatar: "/hero_gif.gif",
+    avatar: "/avatar11.png",
     content: "I absolutely love services like @ViaNexta Simple, tastes amazing, @ViaNexta is perfect for anyone just getting into specialty coffee I don&apos;t remember finding anything this good when I first started exploring better brews a few years ago."
   }
 ];
@@ -137,6 +137,7 @@ export default function TestimonialsSection() {
   return (
     <section 
       ref={sectionRef}
+      id="testimonials"
       className="relative bg-white py-16 lg:py-24"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

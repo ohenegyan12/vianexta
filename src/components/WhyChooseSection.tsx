@@ -15,25 +15,25 @@ const features: FeatureItem[] = [
     id: 1,
     title: "Certified Roasters",
     description: "Crafted by industry-leading experts to guarantee unmatched flavor, consistency, and quality in every roast.",
-    image: "/hero_gif.gif" // Using existing image as placeholder
+    image: "/why1.jpg"
   },
   {
     id: 2,
     title: "Ethically Sourced Beans",
     description: "Directly sourced from sustainable farms that prioritize fair trade practices and environmental responsibility.",
-    image: "/hero_gif.gif"
+    image: "/why2.jpg"
   },
   {
     id: 3,
     title: "Verified Warehouses",
     description: "State-of-the-art storage facilities that maintain optimal conditions for freshness and quality preservation.",
-    image: "/hero_gif.gif"
+    image: "/why3.jpg"
   },
   {
     id: 4,
     title: "Premium Packaging & Customization",
     description: "Tailored packaging solutions that reflect your brand identity while preserving coffee quality and freshness.",
-    image: "/hero_gif.gif"
+    image: "/why4.jpg"
   }
 ];
 
@@ -125,6 +125,7 @@ export default function WhyChooseSection() {
   return (
     <section 
       ref={sectionRef}
+      id="why-choose"
       className="relative bg-[#06382F] py-16 lg:py-24 text-white"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

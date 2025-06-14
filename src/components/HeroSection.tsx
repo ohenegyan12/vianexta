@@ -85,13 +85,15 @@ export default function HeroSection() {
               </p>
             </div>
             {/* CTA Button */}
-            <Link
+            <a
               ref={buttonRef}
-              href="/get-started"
+              href="https://www.vianexta.com/getStarted"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-[#06382F] text-white px-8 py-4 text-lg font-semibold rounded-md hover:bg-[#054a3a] transition-colors duration-300 transform hover:scale-105"
             >
               Get Started Now
-            </Link>
+            </a>
           </div>
           {/* Right Image */}
           <div ref={imageRef} className="relative">

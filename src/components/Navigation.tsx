@@ -43,30 +43,34 @@ export default function Navigation() {
           <div className="flex-1 flex justify-center">
             <div className="hidden md:flex items-center space-x-8">
               <Link
-                href="/why-choose-us"
+                href="#why-choose"
                 className="nav-item text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors"
               >
                 Why Choose Us
               </Link>
               <Link
-                href="/testimonials"
+                href="#testimonials"
                 className="nav-item text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors"
               >
                 Testimonials
               </Link>
-              <Link
-                href="/careers"
+              <a
+                href="https://www.vianexta.com/work_with_us"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="nav-item text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors"
               >
                 Careers
-              </Link>
+              </a>
             </div>
           </div>
 
           {/* Action Buttons */}
           <div className="flex items-center space-x-4">
             <Link
-              href="/signin"
+              href="https://www.vianexta.com/login_page"
+              target="_blank"
+              rel="noopener noreferrer"
               className="nav-item text-gray-700 hover:text-gray-900 px-4 py-2 text-sm font-medium border border-gray-300 rounded-md hover:border-gray-400 transition-colors"
             >
               Sign In

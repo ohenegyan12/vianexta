@@ -70,17 +70,21 @@ export default function Footer() {
               {/* Overlay with exact specs */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
-                  <h3 
+                  <a
+                    href="https://www.vianexta.com/getStarted"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-white font-semibold"
                     style={{
                       fontFamily: 'Inter',
                       fontSize: '45px',
                       fontWeight: 600,
-                      lineHeight: '1.2'
+                      lineHeight: '1.2',
+                      textDecoration: 'none'
                     }}
                   >
                     Get Started Today
-                  </h3>
+                  </a>
                 </div>
               </div>
             </div>
@@ -153,7 +157,10 @@ export default function Footer() {
               </div>
               
               {/* Button at bottom */}
-              <button 
+              <a
+                href="https://www.vianexta.com/getStarted"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white text-black hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center gap-2"
                 style={{
                   fontFamily: 'Inter',
@@ -161,14 +168,15 @@ export default function Footer() {
                   fontWeight: 400,
                   width: '307px',
                   height: '30px',
-                  borderRadius: '9px'
+                  borderRadius: '9px',
+                  textDecoration: 'none'
                 }}
               >
                 Get Started Now
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </button>
+              </a>
             </div>
 
           </div>

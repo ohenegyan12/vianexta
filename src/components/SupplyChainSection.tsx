@@ -20,7 +20,7 @@ const steps: StepItem[] = [
       "Browse and select premium, ethically sourced coffee beans, (roasted, green, or wholesale)",
       "Easily filter by country, ratings, and more to find your perfect beans."
     ],
-    image: "/hero_gif.gif"
+    image: "/new-1.gif"
   },
   {
     id: 2,

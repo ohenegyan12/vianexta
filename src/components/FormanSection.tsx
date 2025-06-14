@@ -79,7 +79,7 @@ export default function FormanSection() {
               <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-2">
                 Meet
               </h2>
-              <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6" style={{ color: '#FFD700' }}>
+              <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6" style={{ color: '#d8501c', fontStyle: 'italic' }}>
                 Forman!
               </h2>
               <p className="text-xl md:text-2xl text-white font-medium">
@@ -91,7 +91,7 @@ export default function FormanSection() {
             <div className="space-y-6">
               <p className="text-lg text-gray-200 leading-relaxed">
                 Say hello to Forman, our AI-powered agent designed to make your coffee 
-                journey effortless. <span style={{ color: '#FFD700' }}>Whether you&apos;re a first-time buyer or a loyal customer, Forman 
+                journey effortless. <span className="text-white">Whether you&apos;re a first-time buyer or a loyal customer, Forman 
                 helps you:</span>
               </p>
 
@@ -105,7 +105,7 @@ export default function FormanSection() {
                   <div key={index} className="flex items-start gap-4">
                     <div 
                       className="flex-shrink-0 w-6 h-6 rounded-sm flex items-center justify-center mt-0.5"
-                      style={{ backgroundColor: '#FFD700' }}
+                      style={{ backgroundColor: '#d8501c' }}
                     >
                       <svg className="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -127,8 +127,8 @@ export default function FormanSection() {
             {/* CTA Button */}
             <div className="pt-4">
               <button 
-                className="px-8 py-4 rounded-lg font-bold text-black text-lg hover:opacity-90 transition-opacity duration-200"
-                style={{ backgroundColor: '#FFD700' }}
+                className="px-8 py-4 rounded-lg font-bold text-white text-lg hover:opacity-90 transition-opacity duration-200"
+                style={{ backgroundColor: '#d8501c' }}
               >
                 Try Forman For Free
               </button>
@@ -136,12 +136,26 @@ export default function FormanSection() {
           </div>
 
           {/* Right Image */}
-          <div ref={imageRef} className="flex justify-center lg:justify-end">
-            <div className="w-full max-w-md lg:max-w-lg">
+          <div ref={imageRef} className="flex justify-center lg:justify-end h-full">
+            <div className="w-full h-full relative">
               <img
                 src="/forman.svg"
                 alt="Forman AI Assistant"
-                className="w-full h-auto"
+                className="w-full h-full object-cover"
+                style={{ display: 'block' }}
+              />
+              {/* Bottom Blur Overlay */}
+              <div
+                style={{
+                  position: 'absolute',
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  height: '100px',
+                  background: 'linear-gradient(to bottom, rgba(6,56,47,0) 0%, #06382F 100%)',
+                  zIndex: 2,
+                  pointerEvents: 'none',
+                }}
               />
             </div>
           </div>
