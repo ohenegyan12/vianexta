@@ -82,7 +82,7 @@ export default function GlobalSection() {
               ref={descriptionRef}
               className="text-lg md:text-xl text-gray-700 font-normal leading-relaxed max-w-4xl text-left"
             >
-             We partner with passionate roasters and buyers—delivering exceptional, traceable coffee grown in the heart of Mexico to coffee lovers everywhere.
+             We partner with passionate roasters and buyers—delivering exceptional, traceable coffee to coffee lovers everywhere.
             </p>
           </div>
 
