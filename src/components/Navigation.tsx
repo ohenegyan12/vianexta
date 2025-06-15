@@ -2,11 +2,12 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap, animations } from '@/utils/gsap';
 
 export default function Navigation() {
   const navRef = useRef<HTMLElement>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     if (navRef.current) {
@@ -89,6 +90,7 @@ export default function Navigation() {
               type="button"
               className="text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900"
               aria-label="Toggle menu"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -96,6 +98,53 @@ export default function Navigation() {
             </button>
           </div>
         </div>
+
+        {/* Mobile Dropdown Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden absolute left-0 right-0 bg-white border-b border-gray-100 shadow-lg z-50 animate-fade-in">
+            <div className="flex flex-col items-center py-4 space-y-2">
+              <Link
+                href="#why-choose"
+                className="nav-item w-full text-center text-gray-700 hover:text-gray-900 px-4 py-3 text-base font-medium transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Why Choose Us
+              </Link>
+              <Link
+                href="#testimonials"
+                className="nav-item w-full text-center text-gray-700 hover:text-gray-900 px-4 py-3 text-base font-medium transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Testimonials
+              </Link>
+              <a
+                href="https://www.vianexta.com/work_with_us"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nav-item w-full text-center text-gray-700 hover:text-gray-900 px-4 py-3 text-base font-medium transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Careers
+              </a>
+              <Link
+                href="https://www.vianexta.com/login_page"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nav-item w-full text-center text-gray-700 hover:text-gray-900 px-4 py-3 text-base font-medium border border-gray-300 rounded-md hover:border-gray-400 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Sign In
+              </Link>
+              <Link
+                href="/contact"
+                className="nav-item w-full text-center bg-[#06382F] text-white px-4 py-3 text-base font-medium rounded-md hover:bg-[#054a3a] transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Get in touch
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );

@@ -30,7 +30,7 @@ const steps: StepItem[] = [
       "Choose your preferred roast — light, medium, dark, or custom.",
       "Select your grind size — whole bean, coarse, medium, fine, or espresso-ready."
     ],
-    image: "/hero_gif.gif"
+    image: "/new-2.gif"
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ const steps: StepItem[] = [
       "Upload your logo & brand assets",
       "Preview real-time renders before finalizing"
     ],
-    image: "/hero_gif.gif"
+    image: "/new-3.gif"
   }
 ];
 
