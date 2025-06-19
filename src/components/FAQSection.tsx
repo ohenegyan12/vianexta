@@ -1,7 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import { gsap } from '@/utils/gsap';
+import { useState, useRef } from 'react';
 
 interface FAQItem {
   id: number;
@@ -46,59 +45,6 @@ export default function FAQSection() {
   const toggleFAQ = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
-
-  // Scroll animation
-  useEffect(() => {
-    if (sectionRef.current && titleRef.current && faqRef.current) {
-      gsap.fromTo(sectionRef.current, 
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-
-      // Animate title from left
-      gsap.fromTo(titleRef.current, 
-        { opacity: 0, x: -50 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.8,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 70%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-
-      // Animate FAQ items from right
-      gsap.fromTo(faqRef.current, 
-        { opacity: 0, x: 50 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.8,
-          delay: 0.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 70%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-    }
-  }, []);
 
   return (
     <section 

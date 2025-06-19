@@ -1,7 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import { gsap } from '@/utils/gsap';
+import { useState, useRef, useEffect } from 'react';
 
 interface StepItem {
   id: number;
@@ -48,53 +47,39 @@ export default function SupplyChainSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Simple auto-rotation
+  useEffect(() => {
+    // Clear any existing interval
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+
+    // Start new interval
+    intervalRef.current = setInterval(() => {
+      setActiveIndex((current) => {
+        // Move to next step, or back to 0 if at the end
+        return current === steps.length - 1 ? 0 : current + 1;
+      });
+    }, 15000);
+
+    // Cleanup on unmount
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, []); // Only run on mount
 
   // Handle step click
   const handleStepClick = (index: number) => {
     setActiveIndex(index);
+    // Reset the timer when manually clicking
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
   };
-
-  // Animate image change with delay for content
-  useEffect(() => {
-    if (imageRef.current) {
-      gsap.to(imageRef.current, {
-        opacity: 0,
-        scale: 0.95,
-        duration: 0.2,
-        ease: "power2.inOut",
-        onComplete: () => {
-          // Delay the image appear to sync with card expansion
-          gsap.to(imageRef.current, {
-            opacity: 1,
-            scale: 1,
-            duration: 0.3,
-            delay: 0.3,
-            ease: "power2.inOut"
-          });
-        }
-      });
-    }
-  }, [activeIndex]);
-
-  // Scroll animation
-  useEffect(() => {
-    if (sectionRef.current) {
-      gsap.fromTo(sectionRef.current, 
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-    }
-  }, []);
 
   return (
     <section 
@@ -123,7 +108,7 @@ export default function SupplyChainSection() {
         </div>
 
         {/* Step Cards Container */}
-        <div className="flex gap-6 items-start justify-center">
+        <div className="flex flex-col lg:flex-row gap-6 items-start justify-center">
           
           {/* Step Cards */}
           {steps.map((step, index) => {
@@ -154,22 +139,18 @@ export default function SupplyChainSection() {
 
             const colors = getStepColors(index);
             
-            // Exact Figma dimensions
-            const cardWidth = isActive ? '1082px' : '167px';
-            const cardHeight = '480px';
+            // Responsive card width
+            const cardWidth = isActive ? '100%' : '100%'; // Mobile default
+            const cardHeight = isActive ? '480px' : '160px';
 
             return (
               <div 
                 key={step.id}
-                className="transition-all duration-500 ease-in-out cursor-pointer flex-shrink-0"
-                style={{ 
-                  width: cardWidth,
-                  height: cardHeight
-                }}
+                className={`transition-all duration-500 ease-in-out cursor-pointer flex-shrink-0 w-full ${isActive ? 'lg:w-[1082px] lg:h-[480px]' : 'lg:w-[167px] lg:h-[480px]'} ${isActive ? 'h-[480px]' : 'h-[160px]'}`}
                 onClick={() => handleStepClick(index)}
               >
                 <div 
-                  className="h-full flex"
+                  className={`h-full flex ${isActive ? 'flex-col lg:flex-row' : ''}`}
                   style={{ 
                     backgroundColor: colors.bg,
                     borderRadius: '12px'
@@ -177,15 +158,15 @@ export default function SupplyChainSection() {
                 >
                   {isActive ? (
                                          // Active Card Layout
-                     <div key={`active-${index}`} className="flex w-full">
+                     <div key={`active-${index}`} className="flex flex-col lg:flex-row w-full">
                       {/* Left Content Area */}
-                      <div className="flex-1 p-8 flex flex-col">
+                      <div className="flex-1 p-4 lg:p-8 flex flex-col">
                         {/* Step Number */}
                         <span 
-                          className="font-medium mb-4 block"
+                          className="font-medium mb-2 lg:mb-4 block"
                           style={{ 
                             color: colors.text,
-                            fontSize: '15.13px',
+                            fontSize: '13px',
                             fontFamily: 'Inter'
                           }}
                         >
@@ -194,7 +175,7 @@ export default function SupplyChainSection() {
                         
                                                  {/* Title - Split into two lines */}
                          <div 
-                           className="mb-8 opacity-0 animate-fade-in"
+                           className="mb-4 lg:mb-8 opacity-0 animate-fade-in"
                            style={{
                              animationDelay: '0.2s',
                              animationFillMode: 'forwards'
@@ -203,20 +184,18 @@ export default function SupplyChainSection() {
                           {step.title === "Select Your Coffee Bean" && (
                             <>
                               <h3 
-                                className="font-medium leading-tight"
+                                className="font-medium leading-tight text-2xl lg:text-[54.14px]"
                                 style={{ 
                                   color: colors.text,
-                                  fontSize: '54.14px',
                                   fontFamily: 'Inter'
                                 }}
                               >
                                 Select Your
                               </h3>
                               <h3 
-                                className="font-medium leading-tight"
+                                className="font-medium leading-tight text-2xl lg:text-[54.14px]"
                                 style={{ 
                                   color: colors.text,
-                                  fontSize: '54.14px',
                                   fontFamily: 'Inter'
                                 }}
                               >
@@ -227,20 +206,18 @@ export default function SupplyChainSection() {
                           {step.title === "Select Your Grind & Roast Type" && (
                             <>
                               <h3 
-                                className="font-medium leading-tight"
+                                className="font-medium leading-tight text-2xl lg:text-[54.14px]"
                                 style={{ 
                                   color: colors.text,
-                                  fontSize: '54.14px',
                                   fontFamily: 'Inter'
                                 }}
                               >
                                 Select Your Grind
                               </h3>
                               <h3 
-                                className="font-medium leading-tight"
+                                className="font-medium leading-tight text-2xl lg:text-[54.14px]"
                                 style={{ 
                                   color: colors.text,
-                                  fontSize: '54.14px',
                                   fontFamily: 'Inter'
                                 }}
                               >
@@ -251,20 +228,18 @@ export default function SupplyChainSection() {
                           {step.title === "Customize Your Brand" && (
                             <>
                               <h3 
-                                className="font-medium leading-tight"
+                                className="font-medium leading-tight text-2xl lg:text-[54.14px]"
                                 style={{ 
                                   color: colors.text,
-                                  fontSize: '54.14px',
                                   fontFamily: 'Inter'
                                 }}
                               >
                                 Customize Your
                               </h3>
                               <h3 
-                                className="font-medium leading-tight"
+                                className="font-medium leading-tight text-2xl lg:text-[54.14px]"
                                 style={{ 
                                   color: colors.text,
-                                  fontSize: '54.14px',
                                   fontFamily: 'Inter'
                                 }}
                               >
@@ -276,25 +251,23 @@ export default function SupplyChainSection() {
                         
                                                  {/* Content with Checkboxes */}
                          <div 
-                           className="space-y-4 flex-grow opacity-0 animate-fade-in"
+                           className="space-y-2 lg:space-y-4 flex-grow opacity-0 animate-fade-in"
                            style={{
                              animationDelay: '0.3s',
                              animationFillMode: 'forwards'
                            }}
                          >
                            {step.points.map((point, pointIndex) => (
-                             <div key={pointIndex} className="flex items-start gap-3">
+                             <div key={pointIndex} className="flex items-start gap-2 lg:gap-3">
                                <div 
-                                 className="flex-shrink-0 w-5 h-5 flex items-center justify-center mt-0.5"
+                                 className="flex-shrink-0 w-4 h-4 lg:w-5 lg:h-5 flex items-center justify-center mt-0.5"
                                  style={{ 
                                    backgroundColor: colors.checkmark,
-                                   borderRadius: '2px',
-                                   width: '20px',
-                                   height: '20px'
+                                   borderRadius: '2px'
                                  }}
                                >
                                  <svg 
-                                   className="w-3 h-3" 
+                                   className="w-2.5 h-2.5 lg:w-3 lg:h-3" 
                                    fill="currentColor" 
                                    viewBox="0 0 20 20"
                                    style={{ color: index === 2 ? '#06382F' : 'white' }}
@@ -303,7 +276,7 @@ export default function SupplyChainSection() {
                                  </svg>
                                </div>
                                <p 
-                                 className="leading-relaxed"
+                                 className="leading-relaxed text-sm lg:text-base"
                                  style={{ color: colors.text }}
                                >
                                  {point}
@@ -314,17 +287,12 @@ export default function SupplyChainSection() {
                       </div>
                       
                       {/* Right GIF Container */}
-                      <div className="flex items-center justify-center pr-8">
-                                                 <div 
-                           ref={imageRef}
-                           className="relative overflow-hidden flex items-center justify-center"
-                           style={{
-                             width: '465px',
-                             height: '347px',
-                             borderRadius: '40px',
-                             border: '4px solid #FFFFFF'
-                           }}
-                         >
+                      <div className="flex items-center justify-center mt-6 lg:mt-0 p-4 lg:pr-8 mb-6 lg:mb-0">
+                        <div
+                          ref={imageRef}
+                          className="relative overflow-hidden flex items-center justify-center w-full h-[180px] lg:w-[465px] lg:h-[347px]"
+                          style={{ borderRadius: '20px', border: '4px solid #FFFFFF' }}
+                        >
                           <img
                             src={step.image}
                             alt={step.title}
@@ -335,12 +303,11 @@ export default function SupplyChainSection() {
                     </div>
                   ) : (
                                          // Inactive Card Layout - Just number at bottom left
-                     <div className="w-full h-full flex items-end p-6">
+                     <div className="w-full h-full flex items-end p-4 lg:p-6">
                        <span 
-                         className="font-medium"
+                         className="font-medium text-base lg:text-[32px]"
                          style={{ 
                            color: colors.text,
-                           fontSize: '32px',
                            fontFamily: 'Inter'
                          }}
                        >

@@ -1,62 +1,13 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useRef } from 'react';
-import { gsap } from '@/utils/gsap';
+import { useRef } from 'react';
 
 export default function GlobalSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const descriptionRef = useRef<HTMLParagraphElement>(null);
   const mapRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Set initial states
-    gsap.set([headingRef.current, descriptionRef.current], { 
-      opacity: 0, 
-      y: 50 
-    });
-    gsap.set(mapRef.current, { 
-      opacity: 0, 
-      scale: 0.9 
-    });
-
-    // Create scroll-triggered animation
-    if (sectionRef.current) {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse"
-        }
-      });
-
-      // Animate heading first
-      tl.to(headingRef.current, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power3.out"
-      });
-
-      // Animate description
-      tl.to(descriptionRef.current, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power3.out"
-      }, "-=0.4");
-
-      // Animate map
-      tl.to(mapRef.current, {
-        opacity: 1,
-        scale: 1,
-        duration: 1,
-        ease: "power3.out"
-      }, "-=0.6");
-    }
-  }, []);
 
   return (
     <section 

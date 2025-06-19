@@ -1,7 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import { gsap } from '@/utils/gsap';
+import { useRef } from 'react';
 
 interface Testimonial {
   id: number;
@@ -96,43 +95,6 @@ const testimonials: Testimonial[] = [
 export default function TestimonialsSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-
-  // Scroll animation
-  useEffect(() => {
-    if (sectionRef.current) {
-      gsap.fromTo(sectionRef.current, 
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-
-      // Animate cards with stagger
-      gsap.fromTo(cardsRef.current, 
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 70%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-    }
-  }, []);
 
   return (
     <section 

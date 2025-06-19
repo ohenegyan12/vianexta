@@ -2,26 +2,11 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
-import { gsap, animations } from '@/utils/gsap';
+import { useRef, useState } from 'react';
 
 export default function Navigation() {
   const navRef = useRef<HTMLElement>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    if (navRef.current) {
-      // Animate navigation items on mount
-      const children = navRef.current.querySelectorAll('.nav-item');
-      gsap.fromTo(children, animations.fadeInUp, {
-        ...animations.fadeInUp,
-        opacity: 1,
-        y: 0,
-        delay: 0.2,
-        stagger: 0.1
-      });
-    }
-  }, []);
 
   return (
     <nav ref={navRef} className="bg-white border-b border-gray-100 sticky top-0 z-50">
@@ -67,7 +52,7 @@ export default function Navigation() {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-4">
             <Link
               href="https://www.vianexta.com/login_page"
               target="_blank"

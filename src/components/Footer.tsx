@@ -1,50 +1,11 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import { gsap } from '@/utils/gsap';
+import { useRef } from 'react';
 
 export default function Footer() {
   const footerRef = useRef<HTMLElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
   const linksRef = useRef<HTMLDivElement>(null);
-
-  // Scroll animation
-  useEffect(() => {
-    if (footerRef.current && ctaRef.current && linksRef.current) {
-      // Removed parallax scroll effect
-      gsap.fromTo(footerRef.current, 
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: footerRef.current,
-            start: "top 90%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-
-      // Animate CTA cards
-      gsap.fromTo(ctaRef.current.children, 
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: ctaRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-    }
-  }, []);
 
   return (
     <footer ref={footerRef} className="relative bg-gradient-to-b from-white to-white">
@@ -52,19 +13,18 @@ export default function Footer() {
       {/* CTA Section */}
       <div className="py-16 lg:py-24 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={ctaRef} className="flex flex-col lg:flex-row gap-3 max-w-6xl mx-auto">
+          <div ref={ctaRef} className="flex flex-col lg:flex-row gap-3 max-w-6xl mx-auto justify-center">
             
             {/* Left Image Card - Get Started Today */}
             <div 
-              className="relative overflow-hidden flex-shrink-0 w-full lg:w-auto"
+              className="relative overflow-hidden flex-shrink-0 w-full lg:w-[733px]"
               style={{
-                width: '733px',
                 height: '391px',
                 borderRadius: '12px',
                 backgroundImage: 'url(/ctaimage.png)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat'
+                backgroundRepeat: 'no-repeat',
               }}
             >
               {/* Overlay with exact specs */}
@@ -91,9 +51,8 @@ export default function Footer() {
 
             {/* Right Content Card - Your Brand Your Coffee */}
             <div 
-              className="bg-black flex flex-col justify-between px-6 lg:px-8 py-6 flex-shrink-0 w-full lg:w-auto"
+              className="bg-black flex flex-col justify-between px-6 lg:px-8 py-6 flex-shrink-0 w-full lg:w-[353px]"
               style={{
-                width: '353px',
                 height: '391px',
                 borderRadius: '12px'
               }}
@@ -188,7 +147,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Main Footer Content */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 text-center lg:text-left justify-items-center lg:justify-items-start">
             
             {/* Logo Section */}
             <div className="lg:col-span-1">
