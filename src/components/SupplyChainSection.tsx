@@ -100,10 +100,10 @@ export default function SupplyChainSection() {
         {/* Header Section */}
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#06382F] leading-tight mb-6">
-            Your Coffee Supply Chain, Simplified
+            Your Supply Chain Simplified
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">
-            Experience specialty Mexican coffee in just three seamless steps—source, craft, deliver.
+            Experience specialty coffee in just three seamless steps—source, craft, deliver.
           </p>
         </div>
 

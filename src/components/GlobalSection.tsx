@@ -24,8 +24,8 @@ export default function GlobalSection() {
               ref={headingRef}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#06382F] leading-tight text-left"
             >
-              ViaNexta <br />
-              knows no boundaries.
+              VIANEXTA <br />
+              KNOWS NO BOUNDARIES
             </h2>
 
             {/* Description */}
