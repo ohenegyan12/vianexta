@@ -22,8 +22,8 @@ export default function HeroSection() {
               ref={headingRef}
               className="text-4xl md:text-6xl lg:text-6xl font-bold text-[#06382F] leading-tight text-center md:text-left"
             >
-              IDEA TODAY,<br />
-              BRAND TOMORROW.
+              IDEA TODAY<br />
+              BRAND TOMORROW
             </h1>
             {/* Descriptions */}
             <div ref={descriptionRef} className="space-y-6 text-center md:text-left">
@@ -31,7 +31,7 @@ export default function HeroSection() {
                 ViaNexta gives you instant access to roasters, warehouses, and ethical sourcing, so you can grow without friction.
               </p>
               <p className="description-text text-lg md:text-xl text-gray-700 font-normal leading-relaxed">
-                Start earning more from your own premium coffee brand—without the hassle.
+                Start earning more from your own premium coffee brand,without the hassle.
               </p>
             </div>
             {/* CTA Button */}

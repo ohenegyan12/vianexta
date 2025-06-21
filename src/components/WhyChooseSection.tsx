@@ -17,7 +17,7 @@ const features: FeatureItem[] = [
     title: "Certified Roasters",
     description: "Crafted by industry-leading experts to guarantee unmatched flavor, consistency, and quality in every roast.",
     image: "/why1.jpg",
-    gif: "/new.gif"
+    gif: "/gif1.jpg"
   },
   {
     id: 2,
