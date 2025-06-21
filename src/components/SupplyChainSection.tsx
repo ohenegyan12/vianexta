@@ -144,7 +144,7 @@ export default function SupplyChainSection() {
             const cardHeight = isActive ? '480px' : '160px';
 
             return (
-              <div 
+              <div  
                 key={step.id}
                 className={`transition-all duration-500 ease-in-out cursor-pointer flex-shrink-0 w-full ${isActive ? 'lg:w-[1082px] lg:h-[480px]' : 'lg:w-[167px] lg:h-[480px]'} ${isActive ? 'h-[480px]' : 'h-[160px]'}`}
                 onClick={() => handleStepClick(index)}

@@ -7,7 +7,8 @@ interface FeatureItem {
   id: number;
   title: string;
   description: string;
-  image: string; // We'll use placeholder images for now
+  image: string;
+  gif: string;
 }
 
 const features: FeatureItem[] = [
@@ -15,31 +16,36 @@ const features: FeatureItem[] = [
     id: 1,
     title: "Certified Roasters",
     description: "Crafted by industry-leading experts to guarantee unmatched flavor, consistency, and quality in every roast.",
-    image: "/why1.jpg"
+    image: "/why1.jpg",
+    gif: "/new.gif"
   },
   {
     id: 2,
     title: "Ethically Sourced Beans",
     description: "Directly sourced from sustainable farms that prioritize fair trade practices and environmental responsibility.",
-    image: "/why2.jpg"
+    image: "/why2.jpg",
+    gif: "/gif2.jpg"
   },
   {
     id: 3,
     title: "Verified Warehouses",
     description: "State-of-the-art storage facilities that maintain optimal conditions for freshness and quality preservation.",
-    image: "/why3.jpg"
+    image: "/why3.jpg",
+    gif: "/gif3.jpg"
   },
   {
     id: 4,
     title: "Premium Packaging & Customization",
     description: "Tailored packaging solutions that reflect your brand identity while preserving coffee quality and freshness.",
-    image: "/why4.jpg"
+    image: "/why4.jpg",
+    gif: "/gif4.jpg"
   }
 ];
 
 export default function WhyChooseSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [imageSrc, setImageSrc] = useState(features[0].image);
   const [nextImage, setNextImage] = useState(1);
   const sectionRef = useRef<HTMLElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
@@ -79,6 +85,16 @@ export default function WhyChooseSection() {
         clearInterval(intervalRef.current);
       }
     };
+  }, [activeIndex]);
+
+  // Handle image to gif transition
+  useEffect(() => {
+    setImageSrc(features[activeIndex].image);
+    const timer = setTimeout(() => {
+      setImageSrc(features[activeIndex].gif);
+    }, 1000); // 1-second delay before showing GIF
+
+    return () => clearTimeout(timer);
   }, [activeIndex]);
 
   // Handle manual item click
@@ -137,7 +153,7 @@ export default function WhyChooseSection() {
           <div className="relative">
             <div ref={imageRef} className="relative w-full h-96 lg:h-[500px] bg-gray-800 rounded-lg overflow-hidden">
               <Image
-                src={features[activeIndex].image}
+                src={imageSrc}
                 alt={features[activeIndex].title}
                 fill
                 priority={activeIndex === 0}

@@ -14,15 +14,16 @@ export default function HeroSection() {
   return (
     <section ref={heroRef} className="relative bg-gradient-to-b from-white to-white py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 lg:col-span-7">
             {/* Main Heading */}
             <h1 
               ref={headingRef}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#06382F] leading-tight text-center md:text-left"
+              className="text-4xl md:text-6xl lg:text-6xl font-bold text-[#06382F] leading-tight text-center md:text-left"
             >
-              IDEA TODAY, BRAND TOMORROW.
+              IDEA TODAY,<br />
+              BRAND TOMORROW.
             </h1>
             {/* Descriptions */}
             <div ref={descriptionRef} className="space-y-6 text-center md:text-left">
@@ -47,10 +48,10 @@ export default function HeroSection() {
             </div>
           </div>
           {/* Right Image */}
-          <div ref={imageRef} className="relative">
+          <div ref={imageRef} className="relative lg:col-span-5">
             <div className="relative w-full h-auto">
               <Image
-                src="/heroimage.svg"
+                src="/newhero.svg"
                 alt="ViaNexta Hero Illustration"
                 width={600}
                 height={500}

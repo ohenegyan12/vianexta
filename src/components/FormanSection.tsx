@@ -29,15 +29,15 @@ export default function FormanSection() {
                 Forman!
               </h2>
               <p className="text-xl md:text-2xl text-white font-medium">
-                Your Personal Coffee Assistant
+                Your Personal Operations Manager
               </p>
             </div>
 
             {/* Description */}
             <div className="space-y-6">
               <p className="text-lg text-gray-200 leading-relaxed">
-                Say hello to Forman, our AI-powered agent designed to make your coffee 
-                journey effortless. <span className="text-white">Whether you&apos;re a first-time buyer or a loyal customer, Forman 
+                Say hello to Forman, our AI-powered operations manager designed to make your coffee 
+                journey effortless. <span className="text-white">Whether you&apos;re new to manufacturing, or an expertForman 
                 helps you:</span>
               </p>
 
@@ -46,7 +46,8 @@ export default function FormanSection() {
                 {[
                   "Choose the right beans based on your taste and roast preferences",
                   "Place and track orders seamlessly", 
-                  "Book purchases on your behalf—hands-free, hassle-free"
+                  "Book purchases on your behalf—hands-free, hassle-free",
+                  "Can communicate with customers and clients to route the purchases for you."
                 ].map((feature, index) => (
                   <div key={index} className="flex items-start gap-4">
                     <div 
