@@ -6,7 +6,6 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import BrandsSection from "@/components/BrandsSection";
 import FAQSection from "@/components/FAQSection";
 import FormanSection from "@/components/FormanSection";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -17,11 +16,10 @@ export default function Home() {
         <WhyChooseSection />
         <SupplyChainSection />
         <TestimonialsSection />
+        <FormanSection />
         <BrandsSection />
         <FAQSection />
-        <FormanSection />
       </main>
-      <Footer />
     </>
   );
 }
