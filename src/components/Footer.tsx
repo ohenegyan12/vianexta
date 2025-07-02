@@ -188,8 +188,8 @@ export default function Footer() {
             <div>
               <h4 className="text-lg font-semibold text-gray-900 mb-4">Actions</h4>
               <ul className="space-y-3">
-                <li><a href="#" className="text-gray-600 hover:text-[#06382F] transition-colors duration-200">Login</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-[#06382F] transition-colors duration-200">Create An Account</a></li>
+                <li><a href="https://www.vianexta.com/login_page" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#06382F] transition-colors duration-200">Login</a></li>
+                <li><a href="https://www.vianexta.com/languages" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#06382F] transition-colors duration-200">Create An Account</a></li>
               </ul>
             </div>
 
