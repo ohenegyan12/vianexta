@@ -3,6 +3,7 @@ import { Inter, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ClareChatButton from "@/components/ClareChatButton";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({
         <Navigation />
         {children}
         <Footer />
+        <ClareChatButton />
       </body>
     </html>
   );
